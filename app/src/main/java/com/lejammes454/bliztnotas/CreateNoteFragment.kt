@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class HomeFragment : Fragment() {
+class CreateNoteFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,14 +21,14 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_create_note, container, false)
 
     }
 
     companion object {
         @JvmStatic
         fun newInstance() =
-            HomeFragment().apply {
+            CreateNoteFragment().apply {
                 arguments = Bundle().apply {
                     Log.i("JUAN","INGRESO AL FRAGMENTO JUTAN")
                 }
