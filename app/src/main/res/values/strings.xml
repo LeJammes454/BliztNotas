@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BliztNotas</string>
+    <string name="notas">Mis Notas</string>
 </resources>
