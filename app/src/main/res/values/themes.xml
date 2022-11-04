@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="ThemeOverlay.search" parent="Theme.BliztNotas">
+
+        <!-- Primary brand color. -->
+        <item name="android:editTextColor">@color/blanco</item>
+        <!-- Secondary brand color. -->
+        <item name="android:textColorHint">@color/gris</item>
+    </style>
 </resources>
