@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    //Colores para la aplicacion
+    <color name="blanco">#fff</color>
+    <color name="lightBlack">#171c26</color>
+    <color name="DarkBlack">#10141c</color>
+    <color name="Amarillo">#ffd633</color>
+    <color name="Azul">#4e33ff</color>
 </resources>
