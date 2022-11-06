@@ -68,17 +68,19 @@
             android:src="@drawable/ic_search"
             app:tint="@color/blanco" />
     </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBtnCreateNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
         android:background="@color/colorAccent"
+        android:src="@drawable/ic_add_task"
         android:tint="@color/blanco"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_add_task"
-        />
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

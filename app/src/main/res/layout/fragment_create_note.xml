@@ -7,78 +7,93 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="@dimen/_10sdp"
-        android:paddingEnd="@dimen/_10sdp"
-        android:text="@string/notas"
-        android:textColor="@color/blanco"
-        android:textSize="@dimen/_15ssp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SearchView
-        android:id="@+id/search_view"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_margin="@dimen/_10sdp"
-        android:queryHint="@string/search"
-        android:theme="@style/ThemeOverlay.search"
-        android:iconifiedByDefault="false"
-        android:searchIcon="@drawable/ic_search"
-        android:background="@drawable/backgroud"
-        app:layout_constraintTop_toBottomOf="@id/tv1"
-        app:layout_constraintStart_toStartOf="parent" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10ssp"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/recycler_view" />
-    <LinearLayout
-        android:id="@+id/l1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
-        android:padding="@dimen/_10sdp"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_check"
-            app:tint="@color/blanco" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_image"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            app:tint="@color/blanco" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_search"
-            app:tint="@color/blanco" />
-    </LinearLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <ImageView
+        android:id="@+id/imgback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:tint="@color/blanco"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginBottom="@dimen/_20sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_check"
+        app:tint="@color/blanco" />
+
+    <ImageView
+        android:id="@+id/imgDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_add_task"
+        android:src="@drawable/ic_check"
+        app:tint="@color/blanco" />
+
+    <EditText
+        android:id="@+id/etNotasTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/imgback"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="@string/titulo_notas"
+        android:textColor="@color/blanco"
+        android:textSize="@dimen/_14ssp"
+
+        android:textColorHint="@color/gris"
+        android:maxLines="1"
+        android:ellipsize="end"
         />
 
+        <LinearLayout
+            android:id="@+id/l1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/etNotasTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="@dimen/_5sdp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:background="@color/Azul"
+                />
+
+            <EditText
+                android:id="@+id/etNotasSubtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/etNotasTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                android:hint="@string/subtitulo_notas"
+                android:textColor="@color/gris"
+                android:textSize="@dimen/_10ssp"
+                android:textColorHint="@color/gris"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+
+    <EditText
+        android:id="@+id/etNotasDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/l1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/descripcion_notas"
+        android:textColor="@color/blanco"
+        android:inputType="textMultiLine"
+        android:textSize="@dimen/_12ssp"
+        android:textColorHint="@color/gris"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
