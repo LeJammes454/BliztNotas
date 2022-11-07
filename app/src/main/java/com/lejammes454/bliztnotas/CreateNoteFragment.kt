@@ -1,5 +1,10 @@
 package com.lejammes454.bliztnotas
 
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,8 +12,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.lejammes454.bliztnotas.DB.Notes
 import com.lejammes454.bliztnotas.DB.NotesDataBase
+import com.lejammes454.bliztnotas.util.NotesBottonSheetFragment
 import kotlinx.android.synthetic.main.fragment_create_note.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -16,6 +23,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class CreateNoteFragment : FragmentosBase() {
+
+    var colorSeleccionado = "#171c26"
     var currenDate:String? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,15 +55,23 @@ class CreateNoteFragment : FragmentosBase() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        LocalBroadcastManager.getInstance(requireContext()).registerReceiver(
+            BroadcastReceiver, IntentFilter("botton_sheet_action")
+        )
         val tiempo = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         currenDate = tiempo.format(Date())
+        colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
         imgDone.setOnClickListener {
             guardarNotas()
         }
 
         imgback.setOnClickListener {
-            remplazarFragmento(HomeFragment.newInstance(),false)
+           requireActivity().supportFragmentManager.popBackStack()
+        }
+        imgMore.setOnClickListener {
+            var noteBottonSheetFragment=NotesBottonSheetFragment.newInstance()
+            noteBottonSheetFragment.show(requireActivity().supportFragmentManager,"Nota Bottom Sheet Fragment")
         }
     }
 
@@ -92,5 +109,89 @@ class CreateNoteFragment : FragmentosBase() {
         fragmentTransition.replace(R.id.frame_layout,fragment).addToBackStack(fragment.javaClass.simpleName).commit()
     }
 
+    private val BroadcastReceiver:BroadcastReceiver=object :BroadcastReceiver(){
+        override fun onReceive(p0: Context?, p1: Intent?) {
+            var actionColor = p1!!.getStringExtra("actionColor")
 
+            when(actionColor!!){
+
+                "Blue" -> {
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+
+                }
+
+                "Yellow" -> {
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+
+                }
+
+
+                "Purple" -> {
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+
+                }
+
+
+                "Green" -> {
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+
+                }
+
+
+                "Orange" -> {
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+
+                }
+
+
+                "Black" -> {
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+
+                }
+
+                else->{
+                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
+                }
+
+                /*
+                "Image" ->{
+                    readStorageTask()
+                    layoutWebUrl.visibility = View.GONE
+                }
+
+                "WebUrl" ->{
+                    layoutWebUrl.visibility = View.VISIBLE
+                }
+                "DeleteNote" -> {
+                    //delete note
+                    deleteNote()
+                }
+
+
+
+
+                else -> {
+                    layoutImage.visibility = View.GONE
+                    imgNote.visibility = View.GONE
+                    layoutWebUrl.visibility = View.GONE
+                    selectedColor = p1.getStringExtra("selectedColor")!!
+                    colorView.setBackgroundColor(Color.parseColor(selectedColor))
+
+                }
+
+                 */
+        }
+    }
+    }
+    override fun onDestroy(){
+        LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(BroadcastReceiver)
+        super.onDestroy()
+    }
 }

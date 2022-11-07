@@ -19,4 +19,14 @@
     <color name="DarkBlack">#10141c</color>
     <color name="Amarillo">#ffd633</color>
     <color name="Azul">#4e33ff</color>
+
+    //Colores para los Tipos de Nota
+    <color name="ColorDefaultNota">#606570</color>
+    <color name="ColorAzulNota">#4e33ff</color>
+    <color name="ColorAmarilloNota">#ffd633</color>
+    <color name="ColorBlancoNota">#fff</color>
+    <color name="ColorMoradoNota">#ae3b76</color>
+    <color name="ColorVerdeNota">#0aebaf</color>
+    <color name="ColorNaranjaNota">#ff7746</color>
+    <color name="ColorBlackNota">#202734</color>
 </resources>

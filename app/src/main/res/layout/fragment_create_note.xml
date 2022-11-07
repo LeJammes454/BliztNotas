@@ -77,11 +77,11 @@
             android:orientation="horizontal">
 
             <View
+                android:id="@+id/colorView"
                 android:layout_width="@dimen/_5sdp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_5sdp"
-                android:background="@color/Azul"
-                />
+                android:background="@color/Azul" />
 
             <EditText
                 android:id="@+id/etNotasSubtitulo"
@@ -115,5 +115,21 @@
         android:textSize="@dimen/_12ssp"
         android:textColorHint="@color/gris"
         />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <ImageView
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:id="@+id/imgMore"
+            android:layout_gravity="center"
+            app:tint="@color/blanco"
+            android:src="@drawable/ic_more_horiz"/>
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
