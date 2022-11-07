@@ -8,8 +8,8 @@ import androidx.room.Query
 
 @Dao
 interface NotaDao {
-    @get:Query("SELECT * FROM Notas ORDER BY id DESC")
-    val allNotes: List<Notes>
+    @Query("SELECT * FROM Notas ORDER BY id DESC")
+    suspend fun getAllNotes():List<Notes>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
    suspend fun insertarnotas(note: Notes)
