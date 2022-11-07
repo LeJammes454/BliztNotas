@@ -17,7 +17,7 @@
         android:layout_marginBottom="@dimen/_10sdp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/ic_check"
+        android:src="@drawable/ic_back"
         app:tint="@color/blanco" />
 
     <ImageView
@@ -37,23 +37,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@null"
         app:layout_constraintTop_toBottomOf="@id/imgback"
         app:layout_constraintStart_toStartOf="parent"
         android:hint="@string/titulo_notas"
         android:textColor="@color/blanco"
         android:textSize="@dimen/_14ssp"
-
+        android:textColorHint="@color/gris"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:inputType="text"
+        />
+    <TextView
+        android:id="@+id/tvDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/etNotasTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/gris"
+        android:textSize="@dimen/_8ssp"
         android:textColorHint="@color/gris"
         android:maxLines="1"
         android:ellipsize="end"
         />
-
         <LinearLayout
             android:id="@+id/l1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            app:layout_constraintTop_toBottomOf="@+id/etNotasTitulo"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateTime"
             app:layout_constraintStart_toStartOf="parent"
             android:orientation="horizontal">
 
@@ -68,16 +87,17 @@
                 android:id="@+id/etNotasSubtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_10sdp"
-                app:layout_constraintTop_toBottomOf="@id/etNotasTitulo"
-                app:layout_constraintStart_toStartOf="parent"
-                android:hint="@string/subtitulo_notas"
-                android:textColor="@color/gris"
-                android:textSize="@dimen/_10ssp"
-                android:textColorHint="@color/gris"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@null"
+                android:hint="Ingresa un subtitulo"
                 android:maxLines="1"
-                android:ellipsize="end"
-                />
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/gris"
+                android:textColorHint="@color/gris"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etNotasTitulo" />
         </LinearLayout>
 
     <EditText

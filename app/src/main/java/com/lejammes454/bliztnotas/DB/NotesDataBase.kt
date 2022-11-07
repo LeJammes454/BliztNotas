@@ -5,21 +5,25 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+
 @Database(entities = [Notes::class], version = 1, exportSchema = false)
-abstract class NotesDataBase:RoomDatabase() {
-    companion object{
-        var notesDataBase:NotesDataBase?=null
+abstract class NotesDataBase : RoomDatabase() {
+
+    companion object {
+        var notesDatabase: NotesDataBase? = null
+
         @Synchronized
-        fun getDataBase(context:Context):NotesDataBase{
-            if (notesDataBase != null){
-                notesDataBase = Room.databaseBuilder(
-                    context,
-                    NotesDataBase::class.java,
-                    "Notes DB"
+        fun getDatabase(context: Context): NotesDataBase {
+            if (notesDatabase == null) {
+                notesDatabase = Room.databaseBuilder(
+                    context
+                    , NotesDataBase::class.java
+                    , "notes.db"
                 ).build()
             }
-            return notesDataBase!!
+            return notesDatabase!!
         }
     }
+
     abstract fun noteDao():NotaDao
 }

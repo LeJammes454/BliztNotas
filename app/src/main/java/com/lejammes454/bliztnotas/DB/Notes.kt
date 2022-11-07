@@ -5,32 +5,32 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Notas")
-data class Notes (
+class Notes:java.io.Serializable {
     @PrimaryKey(autoGenerate = true)
-    var id:Int,
+    var id:Int?= null
 
     @ColumnInfo(name = "titulo")
-    var titulo:String,
+    var titulo:String?= null
 
     @ColumnInfo(name = "sub_titulo")
-    var subtitulo:String,
+    var subtitulo:String?= null
 
     @ColumnInfo(name = "date_time")
-    var dateTime:String,
+    var dateTime:String?= null
 
     @ColumnInfo(name = "nota_Texto")
-    var notaTexto:String,
+    var notaTexto:String?= null
 
     @ColumnInfo(name = "img_path")
-    var imgPath:String,
+    var imgPath:String?= null
 
     @ColumnInfo(name = "color")
-    var color:String,
+    var color:String?= null
 
     @ColumnInfo(name = "vid_path")
-    var vidPath:String
+    var vidPath:String?= null
 
-    ) :java.io.Serializable {
+
     override fun toString(): String {
         return "$titulo : $dateTime"
     }

@@ -12,8 +12,8 @@ interface NotaDao {
     val allNotes: List<Notes>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertarnotas(note: Notes)
+   suspend fun insertarnotas(note: Notes)
 
     @Delete
-    fun deleteNote(note: Notes)
+    suspend fun deleteNote(note: Notes)
 }

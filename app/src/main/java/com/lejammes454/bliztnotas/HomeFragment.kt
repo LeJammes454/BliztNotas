@@ -1,5 +1,4 @@
 package com.lejammes454.bliztnotas
-import kotlinx.android.synthetic.main.fragment_home.view.*
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +6,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : FragmentosBase() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,8 +21,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val n = inflater.inflate(R.layout.fragment_home, container, false)
-        return n
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     companion object {
@@ -38,15 +36,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fabBtnCreateNote.setOnClickListener {
-            remplazarFragmento(CreateNoteFragment.newInstance(),true)
+            remplazarFragmento(CreateNoteFragment.newInstance(),false)
 
         }
     }
 
 
-    fun remplazarFragmento(fragment:Fragment, istransition:Boolean){
+    private fun remplazarFragmento(fragment:Fragment, istransition:Boolean){
         val fragmentTransition = requireActivity().supportFragmentManager.beginTransaction()
-
         if (istransition){
             fragmentTransition.setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_in_left)
         }
