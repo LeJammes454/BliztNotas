@@ -101,6 +101,14 @@
                 app:layout_constraintTop_toBottomOf="@id/etNotasTitulo" />
         </LinearLayout>
 
+    <ImageView
+        android:id="@+id/imgNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/l1"
+        app:layout_constraintBottom_toTopOf="@+id/etNotasDescripcion"
+        />
+
     <EditText
         android:id="@+id/etNotasDescripcion"
         android:layout_width="match_parent"
@@ -129,7 +137,7 @@
             android:id="@+id/imgMore"
             android:layout_gravity="center"
             app:tint="@color/blanco"
-            android:src="@drawable/ic_more_horiz"/>
+            android:src="@drawable/img_bar"/>
 
     </FrameLayout>
 

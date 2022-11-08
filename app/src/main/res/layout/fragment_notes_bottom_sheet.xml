@@ -11,56 +11,30 @@
     android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/layoutHeader"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="@dimen/_40sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/colorPrimary"
-        android:padding="@dimen/_10sdp"
-        android:orientation="horizontal">
-
+        app:layout_constraintBottom_toBottomOf="parent">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_check"
-            app:tint="@color/blanco" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_image"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            app:tint="@color/blanco" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_link"
-            app:tint="@color/blanco" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:id="@+id/imgMore"
+            android:layout_gravity="center"
+            app:tint="@color/blanco"
+            android:src="@drawable/img_bar"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_more_horiz"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                app:tint="@color/blanco" />
-
-
-        </RelativeLayout>
-
-    </LinearLayout>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/_5sdp">
+        android:paddingStart="@dimen/_5sdp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -177,6 +151,55 @@
                 />
 
         </FrameLayout>
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/SeleccionaColor"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blanco"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etNotasTitulo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:tint="@color/blanco" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etNotasTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/blanco"
+            android:text="@string/AgregarImg"
+            android:textSize="@dimen/_12ssp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
 
     </LinearLayout>
 

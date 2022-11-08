@@ -5,6 +5,11 @@
     <string name="titulo_notas">Titulo de la nota</string>
     <string name="subtitulo_notas">SubTitulo de la nota</string>
     <string name="descripcion_notas">Descrpicion de la nota</string>
+    <string name="AgregarImg">Adjuntar imagen</string>
+    <string name="SeleccionaColor">Selecciona un color</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Permisos -->
+    <string name="storage_permission">Esta aplicacion requiere acceso a tu alamcenamiento</string>
 </resources>

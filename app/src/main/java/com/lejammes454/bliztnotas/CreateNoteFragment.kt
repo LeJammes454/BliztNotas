@@ -21,8 +21,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.jar.Manifest
 
-class CreateNoteFragment : FragmentosBase() {
+class CreateNoteFragment : FragmentosBase(){
 
     var colorSeleccionado = "#171c26"
     var currenDate:String? =null
@@ -118,60 +119,61 @@ class CreateNoteFragment : FragmentosBase() {
 
     private val BroadcastReceiver:BroadcastReceiver=object :BroadcastReceiver(){
         override fun onReceive(p0: Context?, p1: Intent?) {
-            var actionColor = p1!!.getStringExtra("actionColor")
+            var actionColor = p1!!.getStringExtra("action")
             Toast.makeText(context,"Ingreso al BroadCastRecevir",Toast.LENGTH_SHORT).show()
             when(actionColor!!){
 
                 "Blue" -> {
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
                 }
 
                 "Yellow" -> {
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
                 }
 
 
                 "Purple" -> {
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
                 }
 
 
                 "Green" -> {
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
                 }
 
 
                 "Orange" -> {
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
                 }
 
 
                 "Black" -> {
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
                 }
+                "Image" ->{
+                   // readStorageTask()
+                   // layoutWebUrl.visibility = View.GONE
+                }
 
                 else->{
-                    colorSeleccionado = p1.getStringExtra("selectedColor")!!
+                    colorSeleccionado = p1.getStringExtra("colorSeleccionado")!!
                     colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
                 }
 
                 /*
-                "Image" ->{
-                    readStorageTask()
-                    layoutWebUrl.visibility = View.GONE
-                }
+
 
                 "WebUrl" ->{
                     layoutWebUrl.visibility = View.VISIBLE
@@ -201,4 +203,5 @@ class CreateNoteFragment : FragmentosBase() {
         LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(BroadcastReceiver)
         super.onDestroy()
     }
+
 }

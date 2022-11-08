@@ -171,17 +171,17 @@ class NotesBottonSheetFragment :BottomSheetDialogFragment(){
 
             val intent = Intent("bottom_sheet_action")
             intent.putExtra("action","Black")
-            intent.putExtra("selectedColor",colorSeleccionado)
+            intent.putExtra("colorSeleccionado",colorSeleccionado)
             LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
         }
 
-        /*
-        layoutImage.setOnClickListener{
+
+        layoutImagen.setOnClickListener{
             val intent = Intent("bottom_sheet_action")
             intent.putExtra("action","Image")
             LocalBroadcastManager.getInstance(requireContext()).sendBroadcast(intent)
-            dismiss()
         }
+        /*
         layoutWebUrl.setOnClickListener{
             val intent = Intent("bottom_sheet_action")
             intent.putExtra("action","WebUrl")
