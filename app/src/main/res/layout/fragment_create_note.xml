@@ -8,16 +8,15 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imgback"
+        android:id="@+id/imgBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/blanco" />
 
     <ImageView
@@ -27,47 +26,49 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/blanco" />
+
 
     <EditText
         android:id="@+id/etNotasTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_10sdp"
         android:layout_margin="@dimen/_10sdp"
         android:background="@null"
-        app:layout_constraintTop_toBottomOf="@id/imgback"
-        app:layout_constraintStart_toStartOf="parent"
-        android:hint="@string/titulo_notas"
-        android:textColor="@color/blanco"
-        android:textSize="@dimen/_14ssp"
-        android:textColorHint="@color/gris"
-        android:maxLines="1"
         android:ellipsize="end"
+        android:hint="@string/titulo_notas"
         android:inputType="text"
-        />
+        android:maxLines="1"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/blanco"
+        android:textColorHint="@color/gris"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBack" />
+
+
     <TextView
         android:id="@+id/tvDateTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
-        android:paddingStart="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_margin="@dimen/_10sdp"
-        app:layout_constraintTop_toBottomOf="@id/etNotasTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textColor="@color/gris"
-        android:textSize="@dimen/_8ssp"
-        android:textColorHint="@color/gris"
-        android:maxLines="1"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:ellipsize="end"
-        />
-        <LinearLayout
+        android:maxLines="1"
+        android:paddingStart="@dimen/_10sdp"
+        android:textColor="@color/gris"
+        android:textColorHint="@color/gris"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNotasTitulo" />
+    <LinearLayout
             android:id="@+id/l1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -84,7 +85,7 @@
                 android:background="@color/Azul" />
 
             <EditText
-                android:id="@+id/etNotasSubtitulo"
+                android:id="@+id/etNotaSubtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"

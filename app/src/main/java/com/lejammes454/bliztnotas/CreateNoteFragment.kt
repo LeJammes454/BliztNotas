@@ -55,18 +55,24 @@ class CreateNoteFragment : FragmentosBase() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Toast.makeText(context,"Realizando pendejadas",Toast.LENGTH_SHORT).show()
+
         LocalBroadcastManager.getInstance(requireContext()).registerReceiver(
             BroadcastReceiver, IntentFilter("botton_sheet_action")
         )
+
+
         val tiempo = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
         currenDate = tiempo.format(Date())
         colorView.setBackgroundColor(Color.parseColor(colorSeleccionado))
 
         imgDone.setOnClickListener {
             guardarNotas()
+            Toast.makeText(context, "Se agrego la nota :)",Toast.LENGTH_SHORT).show()
         }
 
-        imgback.setOnClickListener {
+
+        imgBack.setOnClickListener {
            requireActivity().supportFragmentManager.popBackStack()
         }
         imgMore.setOnClickListener {
@@ -79,7 +85,7 @@ class CreateNoteFragment : FragmentosBase() {
         if(etNotasTitulo.text.isNullOrEmpty()){
             Toast.makeText(context,"La Nota Requiere un Titulo",Toast.LENGTH_SHORT).show()
         }
-        if(etNotasSubtitulo.text.isNullOrEmpty()){
+        if(etNotaSubtitulo.text.isNullOrEmpty()){
             Toast.makeText(context,"La Nota Requiere un SubTitulo",Toast.LENGTH_SHORT).show()
         }
         if(etNotasDescripcion.text.isNullOrEmpty()){
@@ -88,14 +94,15 @@ class CreateNoteFragment : FragmentosBase() {
         launch {
             val notas = Notes()
             notas.titulo=etNotasTitulo.text.toString()
-            notas.subtitulo=etNotasSubtitulo.text.toString()
+            notas.subtitulo=etNotaSubtitulo.text.toString()
             notas.notaTexto=etNotasDescripcion.text.toString()
             notas.dateTime=currenDate
             context?.let {
                 NotesDataBase.getDatabase(it).noteDao().insertarnotas(notas)
                 etNotasTitulo.setText("")
-                etNotasSubtitulo.setText("")
+                etNotaSubtitulo.setText("")
                 etNotasDescripcion.setText("")
+
             }
         }
     }
@@ -112,7 +119,7 @@ class CreateNoteFragment : FragmentosBase() {
     private val BroadcastReceiver:BroadcastReceiver=object :BroadcastReceiver(){
         override fun onReceive(p0: Context?, p1: Intent?) {
             var actionColor = p1!!.getStringExtra("actionColor")
-
+            Toast.makeText(context,"Ingreso al BroadCastRecevir",Toast.LENGTH_SHORT).show()
             when(actionColor!!){
 
                 "Blue" -> {

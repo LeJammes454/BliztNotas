@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/ColorPrimario"
     tools:context=".MainActivity">
 
     <TextView
@@ -37,13 +37,16 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10ssp"
-        app:layout_constraintTop_toBottomOf="@id/search_view"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/recycler_view" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+
 
     <LinearLayout
         android:id="@+id/l1"
@@ -75,7 +78,7 @@
             app:tint="@color/blanco" />
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabBtnCreateNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

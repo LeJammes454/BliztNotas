@@ -29,4 +29,7 @@
     <color name="ColorVerdeNota">#0aebaf</color>
     <color name="ColorNaranjaNota">#ff7746</color>
     <color name="ColorBlackNota">#202734</color>
+
+    //Colores Alternativos
+    <color name="ColorPrimario">#B39D9B</color>
 </resources>
